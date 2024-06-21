@@ -137,7 +137,8 @@ class TaskController extends Controller
             ->with('success', "Task \"$name\" was successfully deleted");
     }
 
-    public function myTasks() {
+    public function myTasks()
+    {
 
         $user = auth()->user();
         $query = Task::query()->where('assigned_user_id', $user->id);
