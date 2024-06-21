@@ -55,7 +55,7 @@ class UserController extends Controller
         $data['password'] = bcrypt($data['password']);
         User::create($data);
 
-        return to_route('user.index')->with('success', 'User was created successfully');
+        return to_route('user.index')->with('success', 'User was created successfully.');
     }
 
     /**
@@ -90,7 +90,7 @@ class UserController extends Controller
             unset($data['password']);
         }
         $user->update($data);
-        return to_route('user.index')->with('success', "User \" $user->name\" was updated");
+        return to_route('user.index')->with('success', "User \" $user->name\" was updated successfully.");
     }
 
     /**
@@ -100,6 +100,6 @@ class UserController extends Controller
     {
         $name = $user->name;
         $user->delete();
-        return to_route('project.index')->with('success', "User  \"$name\" was deleted");
+        return to_route('project.index')->with('success', "User  \"$name\" was deleted successfully.");
     }
 }
